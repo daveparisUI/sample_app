@@ -14,7 +14,7 @@
     <file path="/routes.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381430220213" ignored="false" />
     <file path="/static_pages_controller.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1376072971416" ignored="false" />
     <file path="/about.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1380220035125" ignored="false" />
-    <file path="/application.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382126939589" ignored="false" />
+    <file path="/application.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382474163579" ignored="false" />
     <file path="/contact.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1378846181018" ignored="false" />
     <file path="/.gitignore" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1376075221051" ignored="false" />
     <file path="/Guardfile" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1376081047266" ignored="false" />
@@ -42,7 +42,7 @@
     <file path="$USER_HOME$/code/uiris3/sandbox/config/routes.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1380118431936" ignored="false" />
     <file path="/utilities.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1380569035105" ignored="false" />
     <file path="/matchers.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1380232283687" ignored="false" />
-    <file path="/user_pages_spec.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381951920692" ignored="false" />
+    <file path="/user_pages_spec.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382473468170" ignored="false" />
     <file path="/new.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382120388152" ignored="false" />
     <file path="/application_helper_spec.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1380569406580" ignored="false" />
     <file path="/user_spec.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381250112823" ignored="false" />
@@ -57,9 +57,10 @@
     <file path="$USER_HOME$/code/uiris3/sandbox/app/views/routing_form/base/_sponsor.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381438071945" ignored="false" />
     <file path="/_sponsor.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381438071945" ignored="false" />
     <file path="/test.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381782518916" ignored="false" />
-    <file path="/users_helper.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381783206770" ignored="false" />
+    <file path="/users_helper.rb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382130874478" ignored="false" />
     <file path="/Dummy.txt" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1381848297117" ignored="false" />
     <file path="/_error_messages.html.erb" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382120696026" ignored="false" />
+    <file path="/en.yml" changelist="5b3e821d-f8fe-40f0-b5b4-b52791a906ac" time="1382472924807" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,104 +77,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/posts/show.html.erb">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="-8.75">
-              <folding>
-                <marker date="1381949835000" expanded="true" signature="88:242" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="112:235" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="126:224" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="137:209" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="249:303" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="335:375" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="381:423" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="429:475" placeholder="..." />
-                <marker date="1381949835000" expanded="true" signature="481:527" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="0" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="60" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="50" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="2" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.41219512">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="6" selection-start="434" selection-end="434" vertical-scroll-proportion="-7.9583335">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_pages_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/requests/user_pages_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#88#871#0" expanded="false" />
-                <element signature="e#44#1166#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_error_messages.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/shared/_error_messages.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="6" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="35" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.8801956">
               <folding />
             </state>
           </provider>
@@ -189,22 +96,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/spec/factories.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/test.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
         <option value="$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/posts/show.html.erb" />
-        <option value="$PROJECT_DIR$/spec/requests/user_pages_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/users/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_error_messages.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/spec/requests/user_pages_spec.rb" />
+        <option value="$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -1075,37 +982,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/lib/rails/generators/erb/scaffold/templates/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/posts/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="-8.75">
-          <folding>
-            <marker date="1381949835000" expanded="true" signature="88:242" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="112:235" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="126:224" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="137:209" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="249:303" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="335:375" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="381:423" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="429:475" placeholder="..." />
-            <marker date="1381949835000" expanded="true" signature="481:527" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/posts/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="44" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.94634145">
@@ -1129,14 +1005,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="35" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="60" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
+        <state line="47" column="35" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.8660508">
           <folding />
         </state>
       </provider>
@@ -1150,14 +1019,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="-5.625">
+        <state line="9" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.33007336">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_error_messages.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="337" selection-end="337" vertical-scroll-proportion="-6.875">
+        <state line="11" column="6" selection-start="337" selection-end="337" vertical-scroll-proportion="0.40342298">
           <folding />
         </state>
       </provider>
@@ -1169,33 +1038,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/user_pages_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#88#871#0" expanded="false" />
-            <element signature="e#44#1166#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="434" selection-end="434" vertical-scroll-proportion="-7.9583335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="50" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+        <state line="14" column="6" selection-start="434" selection-end="434" vertical-scroll-proportion="0.48655257">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="2" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.41219512">
+        <state line="30" column="2" selection-start="1118" selection-end="1118" vertical-scroll-proportion="0.39030024">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="62" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="261" selection-end="261" vertical-scroll-proportion="0.24249423">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="23" selection-start="729" selection-end="729" vertical-scroll-proportion="0.79676676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/requests/user_pages_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="6" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.79676676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="50" selection-start="254" selection-end="254" vertical-scroll-proportion="0.4157044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p320@railstutorial2ndEd/gems/railties-3.2.3/guides/code/getting_started/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.8801956">
           <folding />
         </state>
       </provider>
