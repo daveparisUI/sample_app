@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
-gem 'bootstrap-sass', '2.0.0'
+#book listing 5.1.2
+#gem 'rails', '3.2.3'
+#gem 'bootstrap-sass', '2.0.0'
+
+#web listing 5.1.2
+gem 'rails', '3.2.15'
+gem 'bootstrap-sass', '2.1'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
@@ -30,6 +36,8 @@ group :test do
   gem 'rspec-rails', '2.9.0'
   gem 'capybara', '1.1.2'
   gem 'factory_girl_rails', '1.4.0'
+  gem 'cucumber-rails', '1.2.1', :require =>false
+  gem 'database_cleaner', '0.7.0'
 end
 
 group :production do
