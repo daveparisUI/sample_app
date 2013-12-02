@@ -1,0 +1,9 @@
+<!--Listing 9.37: a partial to render a single user -->
+<li>
+  <%= gravatar_for user, size: 52 %>
+  <%= link_to user.name, user %>
+  <!-- Listing 9.45: making delete links for admins-->
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete, confirm: "Really? You WANT to DELETE them?!" %>
+  <% end %>
+</li>

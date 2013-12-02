@@ -1,0 +1,7 @@
+Script started on Tue Nov 12 14:43:52 2013
+[?1034hbash-3.2$ quit
+bash: quit: command not found
+bash-3.2$ quitSQLITE=true bundle exec rake db:migrate --trace[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crake 20131028185505_add_dsp_item_number_to_uiris2_released_advanced_accounts[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P AddDSPItemNumberToUIRIS2ReleasedAdvancedAccounts[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctest:quiet:units[K20131028185505 AddDSPItemNumberToUIRIS2ReleasedAdvancedAccounts[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_add_dsp_item_number_to_uiris2_released_advanced_accounts[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[41Pbundle exec rake db:migrate --trace[C[C[C[C[C[C[C[C[C[Cquit[K[Kexit
+exit
+
+Script done on Tue Nov 12 14:44:23 2013

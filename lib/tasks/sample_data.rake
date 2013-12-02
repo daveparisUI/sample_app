@@ -9,10 +9,16 @@ namespace :db do
 
   #giving Rake access to local enviro stuff
   task populate: :environment do
-    User.create!(name:"Example User",
+    admin = User.create!(name:"Example User",
                   email: "example@railstutorial.org",
                   password: "foobar",
                   password_confirmation: "foobar")
+    #Listing 9,41: making 1st sample user an admin
+    admin.toggle!(:admin)
+    #now reset & re-populate the db w/this info
+    #b e r db:reset
+    #b e r db:populate
+    #b e r db:test:prepare
     99.times do |n|
       name = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
