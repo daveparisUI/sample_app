@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    #10,22: making @mps instance var for user SHOW action
+    #NOTE: i was missing gems for paginate!
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new

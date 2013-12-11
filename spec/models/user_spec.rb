@@ -26,6 +26,10 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  #Chapter 10; Listing 9: test for user's mps attribute
+  it { should respond_to(:microposts) }
+
+
   it { should be_valid }
 
   describe "when name is not present" do
@@ -131,6 +135,37 @@ describe User do
   describe "remember token" do
     before {@user.save}
     its(:remember_token) { should_not be_blank }
+  end
+
+  #10.13: testing order of mp's
+  describe "micropost associations" do
+
+    before { @user.save }
+    #let! = makes post show immediately not like just let which only comes into
+    #existence when referenced
+    #by default records are arranged by ID
+    let!(:older_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+    end
+
+    #newest 1st
+    it "should have the right microposts in the right order" do
+      @user.microposts.should == [newer_micropost, older_micropost]
+    end
+
+    #10.15: test to ensure mp's are destroyed when user is
+    it "should destroy associated microposts" do
+      #using .dup to make a shallow copy of entries to check they're gone
+      microposts = @user.microposts.dup
+      @user.destroy
+      microposts.should_not be_empty
+      microposts.each do |micropost|
+        Micropost.find_by_id(micropost.id).should be_nil
+      end
+    end
   end
 
 end
