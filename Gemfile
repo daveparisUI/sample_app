@@ -8,6 +8,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.15'
 gem 'bootstrap-sass', '2.1'
 
+#Listing 9.29: using to add more users cuz book doesn't know I have a few
+#being added via a rake task in lib/tasks/sample_data.rake
+gem 'faker', '1.0.1'
+
+#Listing 9.31: Will Paginate gem
+gem 'will_paginate', '3.0.3'
+
 gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
@@ -54,6 +61,7 @@ group :test do
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails', '1.4.0'
+  gem 'launchy'
 end
 
 
