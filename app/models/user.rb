@@ -10,14 +10,16 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
+
   #Chapter 10. Listing 11:a user has_many microposts
   has_many :microposts, dependent: :destroy #10.16: DEPENDENT DESTROY does has_many delete to remove mp's when user's deleted
 
+  validates_presence_of :password, :on => :create
 
   before_save { |user| user.email = email.downcase }
-  before_save { self.email.downcase! }
+  #before_save { self.email.downcase! }
   before_save :create_remember_token
 
 

@@ -1,0 +1,26 @@
+<!--Listing 9.25: creating index pg to display all users -->
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<!--Listing 9.34 paginating -->
+<%= will_paginate %>
+
+<ul class="users">
+  <!-- loop thru all the users loaded from the index mod in the users cont, display their
+        gravatar img, which probly won't work cuz the users don't have them-->
+  <%# @users.each do |user| %>
+    <!--<li>
+      <%#= gravatar_for user, size: 52 %>
+      <%#= link_to user.name, user %>
+    </li> -->
+      <!-- Listing 9.36: refactoring code for slick compact views
+      <%#=  render user #calling render on variable user, created via _user.html.erb %> -->
+
+        <!--#using the variable itself, but how does it know to associate to my partial? -->
+      <%= render @users  %>
+  <%# end %>
+</ul>
+
+
+<!--Listing 9.34 paginating -->
+<%= will_paginate %>
