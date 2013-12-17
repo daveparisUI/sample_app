@@ -47,13 +47,6 @@ end
 
 gem 'jquery-rails', '2.0.2'
 
-group :test do
-  gem 'rspec-rails', '2.9.0'
-  gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails', '1.4.0'
-  gem 'cucumber-rails', '1.2.1', :require =>false
-  gem 'database_cleaner', '0.7.0'
-end
 
 group :production do
   #heroku postgreSQL gem for deployment
@@ -62,6 +55,17 @@ end
 
 # Test gems on Macintosh
 group :test do
+
+  #*&*&* This was above so I moved into here &commented out the dups
+
+#group :test do
+#  gem 'rspec-rails', '2.9.0'
+#  gem 'capybara', '1.1.2'
+#  gem 'factory_girl_rails', '1.4.0'
+  gem 'cucumber-rails', '1.2.1', :require =>false
+  gem 'database_cleaner', '0.7.0'
+#end
+
   gem 'rspec-rails', '2.9.0'
   gem 'capybara', '1.1.2'
   gem 'rb-fsevent', '0.4.3.1', :require => false

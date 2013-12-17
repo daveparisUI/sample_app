@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #10,22: making @mps instance var for user SHOW action
+    #10.22: making @mps instance var for user SHOW action
     #NOTE: i was missing gems for paginate!
     @microposts = @user.microposts.paginate(page: params[:page])
   end
@@ -84,20 +84,22 @@ class UsersController < ApplicationController
   #    params.require(:user).permit(:name, :email, :password,
   #                                 :password_confirmation, :admin)
   #  end
-    def signed_in_user
-      #Listing 9.19 using store_location
-      unless signed_in?
-      #*** THIS DIDN'T WORK ***
-      #  #Chapter 9 Ex 6: redirected if trying to do a create & already signed in
-      #if signed_in?
-      #  #this flash doesn't work but seems like a good idea
-      #  flash.now[:error] = "You are already created"
-      #  redirect_to root_path
-      #else
-        store_location
-        redirect_to signin_path, notice: "Please sign in." unless signed_in?
-      end
-    end
+
+  #10.27: moved this to sessions_helper *&*&*&*&*
+  #  def signed_in_user
+  #    #Listing 9.19 using store_location
+  #    unless signed_in?
+  #    #*** THIS DIDN'T WORK ***
+  #    #  #Chapter 9 Ex 6: redirected if trying to do a create & already signed in
+  #    #if signed_in?
+  #    #  #this flash doesn't work but seems like a good idea
+  #    #  flash.now[:error] = "You are already created"
+  #    #  redirect_to root_path
+  #    #else
+  #      store_location
+  #      redirect_to signin_path, notice: "Please sign in." unless signed_in?
+  #    end
+  #  end
 
     def correct_user
       @user = User.find(params[:id])

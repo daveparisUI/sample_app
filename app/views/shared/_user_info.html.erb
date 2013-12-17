@@ -1,0 +1,15 @@
+<!--#10.32: user info sidebar partial -->
+<a href="<%= user_path(current_user) %>">
+  <%= gravatar_for current_user, size: 52 %>
+</a>
+
+<h1>
+  <%= current_user.name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+<span>
+  <!-- total count of mp's -->
+  <%=  pluralize(current_user.microposts.count, "micropost") %>
+</span>

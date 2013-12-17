@@ -1,6 +1,12 @@
 SampleApp::Application.routes.draw do
+  get "microposts/create"
+
+  get "microposts/destroy"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  #10.25: creating mp's routes resources
+  resources :microposts, only: [:create, :destroy]
 
 
   get "users/new"
