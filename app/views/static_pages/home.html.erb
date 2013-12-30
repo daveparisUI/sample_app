@@ -1,31 +1,9 @@
 <!-- #10.31: if signed in, show mp stuff, otherwise show signin/up stuff -->
 <% if signed_in? %>
-    <div class="row">
-      <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-      </aside>
-    </div>
-    <!--#10.44: adding status feed to home pg -->
-    <div class="span8">
-      <h3>Micropost Feed</h3>
-      <%=  render 'shared/feed' %>
-    </div>
+    <!--10.5.3: partials -->
+    <%= render :partial => 'static_pages/signed_in_home' %>
 <% else %>
-    <div class="center hero-unit">
-    <h1>welcome to the Sample App</h1>
-    <h2>
-      This is the home page for the
-        <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
-
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-    </div>
+    <%= render :partial => 'not_signed_in_home' %>
 
     <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>

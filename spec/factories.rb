@@ -27,14 +27,10 @@ FactoryGirl.define do
     content "Lorem ipsum"
     #telling FactoryGirl about mp's assoc'd user by incl. in def of factory:
     user
-    sequence(:name)       { |n| "Person #{n}" }
-    sequence(:email)      { |n| "person_#{n}@example.com" }
-    password "foobar"
-    password_confirmation "foobar"
 
-    #Listing 9.43: making admin factory to create admin users during testing
-    factory :admin do
-      admin true
-    end
+    ##Listing 9.43: making admin factory to create admin users during testing
+    #factory :admin do
+    #  admin true
+    #end
   end
 end

@@ -14,6 +14,8 @@ describe Micropost do
   before { @micropost = user.microposts.build(content: "Lorem ipsum") }
 
 
+
+
   #Chapter 10; Listing 10.2: verify mp obj responds to content & userId attrs
   subject { @micropost }
   it { should respond_to(:content) }
@@ -21,6 +23,7 @@ describe Micropost do
   #Chapter 10; Listing 10.8: test for mp's users association, testing for micropost.user
   it { should respond_to(:user) }
   its(:user) { should == user }
+
 
 
   #Chapter 10; Listing 10.3: tests for validity of new micropost

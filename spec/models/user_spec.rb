@@ -15,26 +15,26 @@ describe User do
 
   #Listing 9.39: testing for admin attribute
   it { should respond_to(:admin) }
-  it { should respond_to(:authenticate)}
+  it { should respond_to(:authenticate) }
 
-  it { should respond_to(:microposts)}
-  it { should respond_to(:feed)}
+  it { should respond_to(:microposts) }
+  it { should respond_to(:feed) }
 
-  it {should be_valid }
+  it { should be_valid }
   it { should_not be_admin }
 
   describe "with admin attribute set to 'true'" do
     #setting admin attribute to TRUE
     #use migration to create admin attribute, adding admin column to users tbl:
     # rails generate migration add_admin_to_users admin:boolean
-    before { @user.toggle!(:admin)}
+    before { @user.toggle!(:admin) }
 
     it { should be_admin }
   end
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
-                     password: "foobar", password_confirmation:"foobar")
+                     password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @user }
@@ -53,17 +53,17 @@ describe User do
   it { should be_valid }
 
   describe "when name is not present" do
-    before {@user.name = " " }
+    before { @user.name = " " }
     it { should_not be_valid }
   end
 
   describe "when email is not present" do
-    before {@user.email = " " }
+    before { @user.email = " " }
     it { should_not be_valid }
   end
 
   describe "when the name is too long" do
-    before {@user.name = "a" * 51 }
+    before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
 
@@ -81,9 +81,6 @@ describe User do
     before { @user.password_confirmation = nil }
     it { should_not be_valid }
   end
-
-
-
 
 
   describe "when email format is invalid" do
@@ -136,7 +133,7 @@ describe User do
     end
 
     describe "with a password that's too short" do
-      before {@user.password = @user.password_confirmation = "a" * 5 }
+      before { @user.password = @user.password_confirmation = "a" * 5 }
       it { should be_invalid }
     end
   end
@@ -153,7 +150,7 @@ describe User do
   end
 
   describe "remember token" do
-    before {@user.save}
+    before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
 
@@ -199,13 +196,17 @@ describe User do
     end
 
     describe "status" do
-      FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
-    end
+      let(:unfollowed_post) do
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      end
 
-    its(:feed) { should include(newer_micropost) }
-    its(:feed) { should include(older_micropost) }
-    #right now only checking user's mp's & not showing -
-    # other ppl's posts that are being followed
-    its(:feed) { should_not include(unfollowed_post) }
+      its(:feed) { should include(newer_micropost) }
+      its(:feed) { should include(older_micropost) }
+      #right now only checking user's mp's & not showing -
+      # other ppl's posts that are being followed
+      its(:feed) { should_not include(unfollowed_post) }
+    end
   end
 end
+
+

@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//#10.5.7: mp count
+//= require microposts
