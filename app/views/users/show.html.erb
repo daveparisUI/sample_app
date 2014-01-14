@@ -1,17 +1,29 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
-<!-- 10.20: displaying mp's on user's SHOW pg -->
-<div class="row">
-  <aside>
 
+<!--#11.27: adding follow form & follower stats -->
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
+
+  <!-- 10.20: displaying mp's on user's SHOW pg -->
   <div class="span8">
-    <%if @user.microposts.any?#prevents empty list from being displayed %>
-    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <%= render 'follow_form' if signed_in? %>
+    <% if @user.microposts.any? #prevents empty list from being displayed  %>
+        <h3>Microposts (<%= @user.microposts.count %>)</h3>
         <ol class="microposts">
           <%= render @microposts %>
         </ol>
+
         <%= will_paginate @microposts %>
-        <% end %>
+    <% end %>
   </div>
 </div>

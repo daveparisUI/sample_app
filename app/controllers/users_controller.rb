@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy] #Listing 9.22: index action now part of before filter
+  #11.30: followers & following actions
+  before_filter :signed_in_user,
+                only: [:index, :edit, :update, :destroy, :following, :followers] #Listing 9.22: index action now part of before filter
   #Listing 9.46, adding :destroy action stuff
   before_filter :correct_user, only: [:edit, :update]
 
@@ -75,6 +77,21 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+
+  #11.30 cont'd
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private

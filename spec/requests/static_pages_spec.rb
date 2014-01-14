@@ -37,9 +37,6 @@ describe "Static Pages" do
         31.times { FactoryGirl.create(:micropost, user: user) }
         FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum")
         FactoryGirl.create(:micropost, user: user, content: "Dolor sit amet")
-
-
-
         sign_in user
         visit root_path
       end
@@ -60,6 +57,19 @@ describe "Static Pages" do
         #10.5.4: cont'd
 
       end
+
+      #11.19: test for following/followers
+      describe "follower/following counts" do
+        let(:other_user) { FactoryGirl.create(:user)}
+        before do
+          other_user.follow!(user)
+          visit root_path
+        end
+
+        it {should have_link("0 following", href: following_user_path(user)) }
+        it {should have_link("1 follower", href: followers_user_path(user)) }
+      end
+
       #10.5 Ex. 1: sidebar mp count & pluralized
       it "should have micropost count and be plural" do
         page.should have_content("#{user.feed.count} microposts")

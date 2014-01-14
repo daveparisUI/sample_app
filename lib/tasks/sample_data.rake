@@ -9,40 +9,57 @@ namespace :db do
 
   #giving Rake access to local enviro stuff
   task populate: :environment do
-    admin = User.create!(name:"Example User",
-                  email: "example@railstutorial.org",
-                  password: "foobar",
-                  password_confirmation: "foobar")
-    #Listing 9,41: making 1st sample user an admin
-    admin.toggle!(:admin)
-    #now reset & re-populate the db w/this info
-    #b e r db:reset
-    #b e r db:populate
-    #b e r db:test:prepare
-    99.times do |n|
-      name = Faker::Name.name
-      email = "example-#{n+1}@railstutorial.org"
-      password = "password"
-      User.create!(name: name,
-                    email: email,
-                    password: password,
-                    password_confirmation: password)
-    end
+    #11.17 cont'd
+    make_users
+    make_microposts
+    make_relationships
+  end
+end
 
-    #this was above but upon merge I found my file & moved this here
-    #10.23: Adding mp's to sample data, looping thru 6 users & adding 50 mp's
-    users = User.all(limit: 6)
-        51.times do
-          content = Faker::Lorem.sentence(5)
-          users.each { |user| user.microposts.create!(content: content) }
-          #to generate:
-          #bundle exec rake db:reset
-          # bundle exec rake db:populate
+def make_users
+  admin = User.create!(name: "Example User",
+                       email: "example@railstutorial.org",
+                       password: "foobar",
+                       password_confirmation: "foobar")
+  #Listing 9,41: making 1st sample user an admin
+  admin.toggle!(:admin)
+  #now reset & re-populate the db w/this info
+  #b e r db:reset
+  #b e r db:populate
+  #b e r db:test:prepare
+  99.times do |n|
+    name = Faker::Name.name
+    email = "example-#{n+1}@railstutorial.org"
+    password = "password"
+    User.create!(name: name,
+                 email: email,
+                 password: password,
+                 password_confirmation: password)
+  end
+end
 
-        end
-
+#11.17: adding sample data relationship relationships & broke code into modules
+def make_microposts
+  #this was above but upon merge I found my file & moved this here
+  #10.23: Adding mp's to sample data, looping thru 6 users & adding 50 mp's
+  users = User.all(limit: 6)
+  51.times do
+    content = Faker::Lorem.sentence(5)
+    users.each { |user| user.microposts.create!(content: content) }
+    #to generate:
+    #bundle exec rake db:reset
+    # bundle exec rake db:populate
 
   end
+end
+
+def make_relationships
+  users = User.all
+  user = users.first
+  followed_users = users[2..50]
+  followers = users[3..40]
+  followed_users.each { |followed| user.follow!(followed) }
+  followers.each { |follower| follower.follow!(user) }
 end
 
 #this is old stuff from failure, leaving in here for now

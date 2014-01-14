@@ -16,6 +16,18 @@ class User < ActiveRecord::Base
   #Chapter 10. Listing 11:a user has_many microposts
   has_many :microposts, dependent: :destroy #10.16: DEPENDENT DESTROY does has_many delete to remove mp's when user's deleted
 
+  #11.4 has many foreign key user/relationships association
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+
+  #11.10: followed_users association, foreign key of relationships (has_many through)
+  has_many :followed_users, through: :relationships, source: :followed
+
+  #11.16: reverse relationships for user.followers
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                   class_name: "Relationship",
+                                   dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
+
   validates_presence_of :password, :on => :create
 
   before_save { |user| user.email = email.downcase }
@@ -31,6 +43,20 @@ class User < ActiveRecord::Base
   validates :password,
             length: { minimum: 6 }
   validates :password_confirmation, presence: true
+
+  #11.12: methods for following & follow
+  def following?(other_user)
+    relationships.find_by_followed_id(other_user)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  #11.14: unfollow user
+  def unfollow!(other_user)
+    relationships.find_by_followed_id(other_user).destroy
+  end
 
   def feed
       #10.39: mp status feed; This is preliminary. See "Following users" for the full implementation.

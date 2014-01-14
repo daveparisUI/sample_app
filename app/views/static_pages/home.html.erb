@@ -1,7 +1,11 @@
 <!-- #10.31: if signed in, show mp stuff, otherwise show signin/up stuff -->
 <% if signed_in? %>
+
     <!--10.5.3: partials -->
     <%= render :partial => 'static_pages/signed_in_home' %>
+
+    <!--#11.21: follower/following stats for home pg -->
+
 <% else %>
     <%= render :partial => 'not_signed_in_home' %>
 

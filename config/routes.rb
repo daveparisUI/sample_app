@@ -3,10 +3,21 @@ SampleApp::Application.routes.draw do
 
   get "microposts/destroy"
 
-  resources :users
+  #11.18replacing :users w/following &followers actions
+  # resources :users
+  resources :users do
+    member do
+      get :following, :followers
+      #/users/1/following and /users/1/followers
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   #10.25: creating mp's routes resources
   resources :microposts, only: [:create, :destroy]
+
+  #11.24: user relationship routes
+  resources :relationships, only: [:create, :destroy]
 
 
   get "users/new"

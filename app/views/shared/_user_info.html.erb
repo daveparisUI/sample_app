@@ -1,6 +1,6 @@
 <!--#10.32: user info sidebar partial -->
 <a href="<%= user_path(current_user) %>">
-  <%= gravatar_for current_user, size: 52 %>
+  <%= gravatar_for current_user, size: 120 %>
 </a>
 
 <h1>
@@ -8,6 +8,7 @@
 </h1>
 <span>
   <%= link_to "view my profile", current_user %>
+  <br />
 </span>
 <span>
   <!-- total count of mp's -->
