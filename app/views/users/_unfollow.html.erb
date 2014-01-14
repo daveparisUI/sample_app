@@ -1,4 +1,9 @@
-<!--11.26: form for unfollowing a user -->
+<!--11.26: form for unfollowing a user
+#11.35: SINCE I'M NOT ON RAILS 3 THIS DOESN'T WORK WELL, IT DOESN'T REFRESH THE PG CORRECTLY:
+ adding remote: true for async AJAX call which sends requests
+to the server allowing you to stay on pg w/o having to redirect to the follow/unfollow code &
+come back to the profile pg.
+"remote: true" is Rails' way of adding the AJAX call-->
 <%= form_for(current_user.relationships.find_by_followed_id(@user),
              html: { method: :delete }) do |f| %>
     <%= f.submit "Unfollow", class: "btn btn-large" %>
