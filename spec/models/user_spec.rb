@@ -192,28 +192,33 @@ describe User do
         Micropost.find_by_id(micropost.id).should be_nil
       end
     end
-  end
 
-  describe "micropost associations" do
     #10.38: testing mp feed
-    before { @user.save }
-    let!(:older_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
-    end
-    let!(:newer_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
-    end
-
     describe "status" do
       let(:unfollowed_post) do
         FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
       end
+
+      #11.41: creating status feed for testing
+     let(:followed_user) { FactoryGirl.create(:user) }
+      
+      before do
+       @user.follow!(followed_user)
+       3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
+     end
 
       its(:feed) { should include(newer_micropost) }
       its(:feed) { should include(older_micropost) }
       #right now only checking user's mp's & not showing -
       # other ppl's posts that are being followed
       its(:feed) { should_not include(unfollowed_post) }
+
+      #11.41 cont'd: checking that followed user's content appears in user's feed
+      its(:feed) do
+        followed_user.microposts.each do |micropost|
+          should include(micropost)
+        end
+      end
     end
   end
 

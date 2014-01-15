@@ -59,9 +59,12 @@ class User < ActiveRecord::Base
   end
 
   def feed
-      #10.39: mp status feed; This is preliminary. See "Following users" for the full implementation.
-      Micropost.where("user_id = ?", id)
-    end
+    #10.39: mp status feed; This is preliminary. See "Following users" for the full implementation.
+    #Micropost.where("user_id = ?", id)
+    #11.42: updated feed code
+    Micropost.from_users_followed_by(self)
+  end
+
   private
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
