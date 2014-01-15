@@ -201,7 +201,7 @@ describe User do
 
       #11.41: creating status feed for testing
      let(:followed_user) { FactoryGirl.create(:user) }
-      
+
       before do
        @user.follow!(followed_user)
        3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
