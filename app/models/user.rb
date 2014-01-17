@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy #10.16: DEPENDENT DESTROY does has_many delete to remove mp's when user's deleted
 
   #11.4 has many foreign key user/relationships association
-  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy #11.5.1: remove this for tests to fail
 
   #11.10: followed_users association, foreign key of relationships (has_many through)
   has_many :followed_users, through: :relationships, source: :followed
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   #11.16: reverse relationships for user.followers
   has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name: "Relationship",
-                                   dependent: :destroy
+                                   dependent: :destroy #11.5.1: remove this for tests to fail
   has_many :followers, through: :reverse_relationships, source: :follower
 
   validates_presence_of :password, :on => :create

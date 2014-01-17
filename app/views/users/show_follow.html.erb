@@ -1,3 +1,4 @@
+<!--#11.31: view used to render following/followers-->
 <% provide(:title, @title) %>
 <div class="row">
   <aside class="span4">
@@ -28,3 +29,11 @@
     <%end%>
   </div>
 </div>
+<!--#11.5.3: was to create partials for:
+users/_follow.html.erb
+users/_unfollow.html.erb
+static_pages/home.html.erb
+users/show.html.erb
+but was unable to find enought consistent code to partialize, & couldn't get params to pass. Ex: tried to pass "Follow" text
+for f.submit btn but couldn't get it to work.
+-->

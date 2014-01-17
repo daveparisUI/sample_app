@@ -6,6 +6,7 @@ module UsersHelper
     size = options[:size]
   #gravatar_url = "https://secure.gravatar.com/avatars/#{gravatar_id}.png?s=#{size}"
 
+      #gravatar_url = #"http://www.dilbert.com/dyn/usr_avatar/000000000/00000000/0000000/000000/00000/0000/000/9/9.gif"
 
     gravatar_url = case user.id.to_s[-1, 1].to_i
                      when 2
@@ -29,5 +30,4 @@ module UsersHelper
                    end
     image_tag(gravatar_url, alt: user.name, class: "gravatar", :size => "#{size}x#{size}")
   end
-
 end

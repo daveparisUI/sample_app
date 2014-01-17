@@ -82,6 +82,48 @@ describe "User pages" do
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
 
+    #11.5.4: stats tests for profile pg: following/unfollowing post views
+    describe "check stats display" do
+      #create the users
+      let(:other_user) {FactoryGirl.create(:user) }
+      before do
+        #make them follow each other
+        user.follow!(other_user)
+        other_user.follow!(user)
+        #open their pg
+        visit user_path(user)
+      end
+
+      #check that the following/followers count is correct
+      it { should have_selector('strong#following', text:'1')}
+      it { should have_selector('strong#followers', text:'1')}
+
+      #user unfollows other user
+      describe "unfollowing user" do
+        before do
+          #unfollow the other user
+          user.unfollow!(other_user)
+          #go to users pg
+          visit user_path(user)
+        end
+        #user's "following path count should decrease"
+        it { should have_selector('strong#following', text:'0')}
+        it { should have_selector('strong#followers', text:'1')}
+      end
+      #other user unfollows user
+      describe "other user unfollows user" do
+              before do
+                #unfollow the  user
+                other_user.unfollow!(user)
+                #go to users pg
+                visit user_path(user)
+              end
+              #user's "following path count should decrease"
+              it { should have_selector('strong#following', text:'1')}
+              it { should have_selector('strong#followers', text:'0')}
+            end
+    end
+
     #11.32: Follow/Unfollow testing
     describe "follow/unfollow buttons" do
       let(:other_user) {FactoryGirl.create(:user) }

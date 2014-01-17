@@ -177,6 +177,35 @@ describe User do
       FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
     end
 
+    #11.5.1: destroy relationships between following
+    #make users, other-user specifically
+    #can use @user cuz it's created in here
+    let(:other_user) { FactoryGirl.create(:user) }
+
+    #make user follow someone
+        before do
+          @user.save
+          @user.follow!(other_user)
+          #make followed user follow the follower
+          other_user.follow!(@user)
+        end
+    #destroy the relationship of user to followed
+    it "should destroy the relationship of user to followed" do
+      @relationships = @user.relationships
+      @user.destroy
+      #ensure that the relationship is destroyed
+      @relationships.should be_empty
+    end
+
+    #destroy the reverse relationship of followed user to user
+    it "should destroy the reverse relationship of followed user to user" do
+          reverse_relationships = @user.reverse_relationships
+          @user.destroy
+          #ensure that the relationship is destroyed
+          reverse_relationships.should be_empty
+        end
+
+
     #newest 1st
     it "should have the right microposts in the right order" do
       @user.microposts.should == [newer_micropost, older_micropost]
